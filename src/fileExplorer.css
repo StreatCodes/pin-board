@@ -23,21 +23,25 @@
     display: flex;
     line-height: 0;
     margin-top: -1px;
-    color: #222222;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    max-height: 24px;
+    transition: margin-bottom 200ms, max-height 200ms;
+    overflow: hidden;
 }
 
-.file-explorer .folder-button > svg {
-    transform: rotate(0deg);
-    transition: transform 200ms;
+.file-explorer .folder-button:hover {
+    color: var(--primary-color);
 }
 
-.file-explorer.expanded .folder-button svg {
-    transform: rotate(45deg);
+.file-explorer.expanded .folder-button {
+    margin-bottom: 0px;
+    max-height: 0px;
+}
+
+.file-explorer hr {
+    margin: 5px 10px;
 }
 
 .file-explorer section {
-    border-top: 1px solid rgba(0, 0, 0, 0.20);
-    margin-top: 15px;
-    padding-top: 15px;
+    margin: 10px;
 }

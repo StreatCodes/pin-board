@@ -1,7 +1,15 @@
 .menu-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    transition: color 200ms, background-color 200ms;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.menu-item:hover {
+    color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.04);
 }
 
 .menu-item > * {
@@ -12,6 +20,6 @@
     margin-right: 0;
 }
 
-.menu-item > div {
+.menu-item > .text {
     white-space: nowrap;
 }
