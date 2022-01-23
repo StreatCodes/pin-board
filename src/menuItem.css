@@ -1,0 +1,17 @@
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.menu-item > * {
+    margin-right: 10px;
+}
+
+.menu-item > *:last-child {
+    margin-right: 0;
+}
+
+.menu-item > div {
+    white-space: nowrap;
+}
