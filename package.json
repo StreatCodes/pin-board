@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "esbuild src/index.tsx --bundle --outfile=dist/bundle.js --serve=localhost:8080 --servedir=.",
-    "prod": "esbuild src/index.tsx --bundle --outfile=dist/bundle.js --minify",
+    "dev": "esbuild src/index.tsx --bundle --outfile=dist/bundle.js --external:*.woff2 --serve=localhost:8080 --servedir=.",
+    "prod": "esbuild src/index.tsx --bundle --outfile=dist/bundle.js --external:*.woff2 --minify",
     "help": "esbuild --help"
   },
   "author": "",

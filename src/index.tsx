@@ -1,6 +1,7 @@
 import { h, Component, render, FunctionalComponent, Fragment } from "preact";
 import { FileExplorer } from "./fileExplorer";
 import "./global.css"
+import { ToolBar } from "./toolBar";
 
 //Init the canvas
 const canvas = document.getElementById('canvas') as HTMLCanvasElement;
@@ -18,6 +19,7 @@ resizeCanvas();
 const App: FunctionalComponent = () => {
     return <Fragment>
         <FileExplorer />
+        <ToolBar />
     </Fragment>;
 }
 

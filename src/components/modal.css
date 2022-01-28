@@ -1,0 +1,37 @@
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slide-in {
+    from {transform: scale(0.95);}
+    to {transform: scale(1.0);}
+}
+
+.modal-wrap {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    justify-content: center;
+
+    animation-name: fade-in;
+    animation-duration: 200ms;
+}
+
+.modal-wrap .modal {
+    width: 640px;
+    margin-top: 20vh;
+    margin-bottom: auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+    animation-name: slide-in;
+    animation-duration: 200ms;
+}

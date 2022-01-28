@@ -1,0 +1,16 @@
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 29px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    line-height: 0;
+}
+
+.toolbar hr {
+    margin: 10px 12px;
+}
