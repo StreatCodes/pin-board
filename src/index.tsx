@@ -1,27 +1,25 @@
-import { h, Component, render, FunctionalComponent, Fragment } from "preact";
+import { h, render, FunctionalComponent } from "preact";
+import { useReducer } from "preact/hooks";
+import { Board } from "./board";
 import { FileExplorer } from "./fileExplorer";
 import "./global.css"
+import { BoardContext } from "./store/context";
+import { reducer } from "./store/store";
 import { ToolBar } from "./toolBar";
 
-//Init the canvas
-const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-const ctx = canvas.getContext('2d');
-
-const resizeCanvas = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-//Init the preact UI
 const App: FunctionalComponent = () => {
-    return <Fragment>
+    const [board, dispatch] = useReducer(reducer, []);
+
+    return <BoardContext.Provider value={{ board, dispatch }}>
+        <Board />
         <FileExplorer />
         <ToolBar />
-    </Fragment>;
+    </BoardContext.Provider>;
 }
 
 const appElement = document.getElementById('app');
-render(<App />, appElement);
+if (appElement) {
+    render(<App />, appElement);
+} else {
+    throw new Error(`No element found with id 'app'`)
+}

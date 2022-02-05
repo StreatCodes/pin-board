@@ -3,6 +3,7 @@
         "jsx": "react",
         "jsxFactory": "h",
         "jsxFragmentFactory": "Fragment",
+        "strict": true
     },
     "exclude": [
         "node_modules"
