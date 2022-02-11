@@ -8,6 +8,13 @@
     "prod": "esbuild src/index.tsx --bundle --outfile=dist/bundle.js --external:*.woff2 --minify",
     "help": "esbuild --help"
   },
+  "prettier": {
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 140,
+    "arrowParens": "avoid"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

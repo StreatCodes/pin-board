@@ -1,4 +1,4 @@
-.board {
+.board-wrap {
     z-index: -1;
     position: fixed;
     left: 0;
@@ -8,11 +8,10 @@
     overflow: hidden;
 }
 
-.item {
+.board {
+    position: relative;
+}
+
+.board > * {
     position: absolute;
-    /* left: 10px; */
-    /* top: 40px; */
-    /* background-color: red; */
-    /* width: 20px; */
-    /* height: 20px; */
 }
