@@ -1,10 +1,9 @@
-import { h, Component, render, FunctionalComponent } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks"
+import { h, Component, render, FunctionalComponent } from 'preact';
+import { useEffect, useRef, useState } from 'preact/hooks';
 
-import { FolderIcon, NewFileIcon, PlusIcon } from "./icons"
-import { MenuItem } from "./menuItem";
-import "./fileExplorer.css";
-
+import { FolderIcon, NewFileIcon, PlusIcon } from './icons';
+import { MenuItem } from './menuItem';
+import './fileExplorer.css';
 
 export const FileExplorer: FunctionalComponent = () => {
     const [expanded, setExpanded] = useState(false);
@@ -16,10 +15,10 @@ export const FileExplorer: FunctionalComponent = () => {
             if (!contentRef.current.contains(ele)) {
                 setExpanded(false);
             }
-        }
+        };
         window.addEventListener('click', handler);
-        return () => window.removeEventListener('click', handler)
-    }, [expanded])
+        return () => window.removeEventListener('click', handler);
+    }, [expanded]);
 
     let expandedStyle = '';
     if (contentRef.current && expanded) {
@@ -28,25 +27,27 @@ export const FileExplorer: FunctionalComponent = () => {
         expandedStyle = `max-height: ${height}px; max-width: ${width}px;`;
     }
 
-    return <div class={`file-explorer ${expanded ? 'expanded' : ''}`} style={expandedStyle}>
-        <div style="width: fit-content" ref={contentRef}>
-            <div class="folder-button" onClick={() => setExpanded(!expanded)}>
-                <PlusIcon />
+    return (
+        <div class={`file-explorer ${expanded ? 'expanded' : ''}`} style={expandedStyle}>
+            <div style="width: fit-content" ref={contentRef}>
+                <div class="folder-button" onClick={() => setExpanded(!expanded)}>
+                    <PlusIcon />
+                </div>
+
+                <MenuItem text="New Folder">
+                    <FolderIcon width={20} height={20} />
+                </MenuItem>
+
+                <MenuItem text="Create New Board">
+                    <NewFileIcon width={20} height={20} />
+                </MenuItem>
+
+                <hr />
+
+                <section>
+                    <div style="width: 24px; height: 24px; border-radius: 50%; background-color: gray"></div>
+                </section>
             </div>
-
-            <MenuItem text="New Folder">
-                <FolderIcon width={20} height={20} />
-            </MenuItem>
-
-            <MenuItem text="Create New Board">
-                <NewFileIcon width={20} height={20} />
-            </MenuItem>
-
-            <hr />
-
-            <section>
-                <div style="width: 24px; height: 24px; border-radius: 50%; background-color: gray"></div>
-            </section>
         </div>
-    </div>;
-}
+    );
+};

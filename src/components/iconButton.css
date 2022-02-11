@@ -29,7 +29,7 @@
 }
 
 .icon-button:hover .caption {
-    opacity: 1.0;
+    opacity: 1;
 }
 
 .icon-button .caption.anchor-left {
